@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Muzeum Japonských Sedanů – unikátní sbírka legend japonského automobilového inženýrství. Navštivte nás a zažijte historii na vlastní oči.">
+    <title>JAPSED – Muzeum Japonských Sedanů</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (socials + icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="navbar" id="navbar">
+        <a class="navbar-brand" href="#hero" aria-label="Domů">
+            <img src="images/logo.png" alt="Logo" class="logo">
+        </a>
+
+        <nav aria-label="Hlavní navigace">
+            <ul id="main-menu" class="nav-menu">
+                <li><a href="#expozice" class="nav-link">Expozice</a></li>
+                <li><a href="#novinky" class="nav-link">Novinky</a></li>
+                <li><a href="#rezervace" class="nav-link">Vstupenky</a></li>
+                <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+                <li><a href="#rezervace" class="nav-cta">Rezervovat →</a></li>
+            </ul>
+        </nav>
+
+        <button class="nav-toggle" type="button" aria-label="Otevřít menu" aria-expanded="false"
+            aria-controls="main-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+        <!-- Background images cycling -->
+        <div class="hero-bg">
+            <div class="hero-slide active" style="background-image: url('images/webp/nissan.webp')"></div>
+            <div class="hero-slide" style="background-image: url('images/webp/LexusLs560.webp')"></div>
+            <div class="hero-slide" style="background-image: url('images/webp/ls400.webp')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <span class="hero-kicker">Muzeum Japonských Sedanů</span>
+            <h1 class="hero-title">
+                Kde stroje<br>
+                <em>získávají duši.</em>
+            </h1>
+            <p class="hero-sub">Unikátní sbírka legend japonského automobilového inženýrství pod jednou střechou.</p>
+            <div class="hero-actions">
+                <a href="#expozice" class="btn-primary">Prozkoumat expozice</a>
+                <a href="#rezervace" class="btn-ghost">Koupit vstupenku</a>
+            </div>
+        </div>
+
+        <!-- Slide indicators -->
+        <div class="hero-dots" aria-hidden="true">
+            <button class="hero-dot active" data-slide="0"></button>
+            <button class="hero-dot" data-slide="1"></button>
+            <button class="hero-dot" data-slide="2"></button>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===================== STATS BAR ===================== -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number" data-target="47">0</span>
+            <span class="stat-label">Vozidel v expozici</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="1989">0</span>
+            <span class="stat-label">Rok nejstarší legendy</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="12000">0</span>
+            <span class="stat-label">Návštěvníků ročně</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="8">0</span>
+            <span class="stat-label">Tematických sálů</span>
+        </div>
+    </div>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <div class="marquee-strip" aria-hidden="true">
+        <div class="marquee-track">
+            <!-- Kopie 1 obsahu (sada je 3× zopakovaná, aby jedna kopie byla
+                 širší než obrazovka i na velkých monitorech → žádná mezera). -->
+            <div class="marquee-content">
+                <span>EXPOZICE</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS</span><span class="marquee-dot">●</span>
+                <span>TOYOTA</span><span class="marquee-dot">●</span>
+                <span>NISSAN</span><span class="marquee-dot">●</span>
+                <span>HONDA</span><span class="marquee-dot">●</span>
+                <span>2JZ ENGINE</span><span class="marquee-dot">●</span>
+                <span>JDM CLASSIC</span><span class="marquee-dot">●</span>
+                <span>EXPOZICE</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS</span><span class="marquee-dot">●</span>
+                <span>TOYOTA</span><span class="marquee-dot">●</span>
+                <span>NISSAN</span><span class="marquee-dot">●</span>
+                <span>HONDA</span><span class="marquee-dot">●</span>
+                <span>2JZ ENGINE</span><span class="marquee-dot">●</span>
+                <span>JDM CLASSIC</span><span class="marquee-dot">●</span>
+                <span>EXPOZICE</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS</span><span class="marquee-dot">●</span>
+                <span>TOYOTA</span><span class="marquee-dot">●</span>
+                <span>NISSAN</span><span class="marquee-dot">●</span>
+                <span>HONDA</span><span class="marquee-dot">●</span>
+                <span>2JZ ENGINE</span><span class="marquee-dot">●</span>
+                <span>JDM CLASSIC</span><span class="marquee-dot">●</span>
+            </div>
+            <!-- Kopie 2 – naprosto stejný obsah (kvůli plynulé smyčce -50%). -->
+            <div class="marquee-content" aria-hidden="true">
+                <span>EXPOZICE</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS</span><span class="marquee-dot">●</span>
+                <span>TOYOTA</span><span class="marquee-dot">●</span>
+                <span>NISSAN</span><span class="marquee-dot">●</span>
+                <span>HONDA</span><span class="marquee-dot">●</span>
+                <span>2JZ ENGINE</span><span class="marquee-dot">●</span>
+                <span>JDM CLASSIC</span><span class="marquee-dot">●</span>
+                <span>EXPOZICE</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS</span><span class="marquee-dot">●</span>
+                <span>TOYOTA</span><span class="marquee-dot">●</span>
+                <span>NISSAN</span><span class="marquee-dot">●</span>
+                <span>HONDA</span><span class="marquee-dot">●</span>
+                <span>2JZ ENGINE</span><span class="marquee-dot">●</span>
+                <span>JDM CLASSIC</span><span class="marquee-dot">●</span>
+                <span>EXPOZICE</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS</span><span class="marquee-dot">●</span>
+                <span>TOYOTA</span><span class="marquee-dot">●</span>
+                <span>NISSAN</span><span class="marquee-dot">●</span>
+                <span>HONDA</span><span class="marquee-dot">●</span>
+                <span>2JZ ENGINE</span><span class="marquee-dot">●</span>
+                <span>JDM CLASSIC</span><span class="marquee-dot">●</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== EXPOZICE ===================== -->
+    <section class="section-expozice" id="expozice">
+        <div class="section-header reveal">
+            <span class="section-tag">/ 01 Expozice</span>
+            <h2 class="section-title">Naše sbírka</h2>
+            <p class="section-desc">Každý vůz má příběh. Každý příběh zaslouží být vyprávěn.</p>
+        </div>
+
+        <!-- Countdown card standalone -->
+        <div class="expo-countdown-wrap reveal">
+            <article class="countdown-card">
+                <div class="countdown-inner">
+                    <p class="countdown-label-top">Nová výstava</p>
+                    <div id="countdown-display" class="countdown-display">
+                        <div class="cd-unit">
+                            <span class="cd-num" id="days">00</span>
+                            <span class="cd-label">DNŮ</span>
+                        </div>
+                        <span class="cd-sep">:</span>
+                        <div class="cd-unit">
+                            <span class="cd-num" id="hours">00</span>
+                            <span class="cd-label">HODI</span>
+                        </div>
+                        <span class="cd-sep">:</span>
+                        <div class="cd-unit">
+                            <span class="cd-num" id="minutes">00</span>
+                            <span class="cd-label">MIN</span>
+                        </div>
+                        <span class="cd-sep">:</span>
+                        <div class="cd-unit">
+                            <span class="cd-num" id="seconds">00</span>
+                            <span class="cd-label">SEK</span>
+                        </div>
+                    </div>
+                    <p class="countdown-sub">Speciální výstava věnovaná vývoji japonských sedanů otevírá 1. září 2026.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Exhibition Carousel -->
+        <div class="expo-carousel reveal" id="expo-carousel">
+            <div class="expo-carousel-viewport">
+                <div class="expo-carousel-track" id="expo-carousel-track">
+                    <!-- Slides appended by JS from CSV -->
+                </div>
+            </div>
+
+            <!-- Navigation arrows -->
+            <button class="expo-carousel-btn expo-carousel-prev" id="expo-carousel-prev"
+                aria-label="Předchozí expozice">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="expo-carousel-btn expo-carousel-next" id="expo-carousel-next" aria-label="Další expozice">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Dot indicators -->
+            <div class="expo-carousel-dots" id="expo-carousel-dots"></div>
+        </div>
+    </section>
+
+    <!-- ===================== MARQUEE 2 ===================== -->
+    <div class="marquee-strip marquee-reverse" aria-hidden="true">
+        <div class="marquee-track">
+            <!-- Kopie 1 obsahu (sada 3× zopakovaná kvůli šířce). -->
+            <div class="marquee-content">
+                <span>NOVINKY</span><span class="marquee-dot">●</span>
+                <span>HERITAGE EDITION</span><span class="marquee-dot">●</span>
+                <span>BABY 2JZ</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS 2026</span><span class="marquee-dot">●</span>
+                <span>JDM NEWS</span><span class="marquee-dot">●</span>
+                <span>NOVINKY</span><span class="marquee-dot">●</span>
+                <span>HERITAGE EDITION</span><span class="marquee-dot">●</span>
+                <span>BABY 2JZ</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS 2026</span><span class="marquee-dot">●</span>
+                <span>JDM NEWS</span><span class="marquee-dot">●</span>
+                <span>NOVINKY</span><span class="marquee-dot">●</span>
+                <span>HERITAGE EDITION</span><span class="marquee-dot">●</span>
+                <span>BABY 2JZ</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS 2026</span><span class="marquee-dot">●</span>
+                <span>JDM NEWS</span><span class="marquee-dot">●</span>
+            </div>
+            <!-- Kopie 2 – naprosto stejný obsah (kvůli plynulé smyčce -50%). -->
+            <div class="marquee-content" aria-hidden="true">
+                <span>NOVINKY</span><span class="marquee-dot">●</span>
+                <span>HERITAGE EDITION</span><span class="marquee-dot">●</span>
+                <span>BABY 2JZ</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS 2026</span><span class="marquee-dot">●</span>
+                <span>JDM NEWS</span><span class="marquee-dot">●</span>
+                <span>NOVINKY</span><span class="marquee-dot">●</span>
+                <span>HERITAGE EDITION</span><span class="marquee-dot">●</span>
+                <span>BABY 2JZ</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS 2026</span><span class="marquee-dot">●</span>
+                <span>JDM NEWS</span><span class="marquee-dot">●</span>
+                <span>NOVINKY</span><span class="marquee-dot">●</span>
+                <span>HERITAGE EDITION</span><span class="marquee-dot">●</span>
+                <span>BABY 2JZ</span><span class="marquee-dot">●</span>
+                <span>LEXUS LS 2026</span><span class="marquee-dot">●</span>
+                <span>JDM NEWS</span><span class="marquee-dot">●</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== NOVINKY ===================== -->
+    <section class="section-news" id="novinky">
+        <div class="section-header reveal">
+            <span class="section-tag">/ 02 Novinky</span>
+            <h2 class="section-title">Aktuálně</h2>
+        </div>
+
+        <div class="news-layout">
+            <!-- Featured article -->
+            <article class="news-featured reveal">
+                <div class="news-feat-img-wrap">
+                    <img src="images/webp/lexusls.webp" alt="Lexus LS Heritage Edition" class="news-feat-img" loading="lazy">
+                    <div class="news-feat-overlay"></div>
+                </div>
+                <div class="news-feat-body">
+                    <span class="news-tag">Automobily</span>
+                    <h3 class="news-feat-title">Konec legendy: Lexus LS uzavírá svou kapitolu limitovanou edicí Heritage
+                        Edition</h3>
+                    <p class="news-feat-text">Příběh, který v roce 1989 šokoval automobilový svět modelem LS400, se po
+                        37 letech uzavírá. Lexus oznámil, že modelový rok 2026 je pro sedan LS definitivně poslední.
+                        Jako rozlučku značka vydává extrémně limitovanou sérii Heritage Edition v exkluzivní černé barvě
+                        „Ninety Noir" s interiérem v kůži Rioja Red a vyšitou siluetou původního LS400 na opěrkách
+                        hlavy.</p>
+                    <div class="news-meta">
+                        <span><i class="far fa-calendar-alt"></i> Červen 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Secondary articles -->
+            <div class="news-side">
+                <article class="news-card reveal" style="--delay: 0.1s">
+                    <div class="news-card-img-wrap">
+                        <img src="images/webp/2jz.webp" alt="2JZ Motor" class="news-card-img" loading="lazy">
+                    </div>
+                    <div class="news-card-body">
+                        <span class="news-tag">Technologie</span>
+                        <h3 class="news-card-title">2JZ na scéně: Toyota testuje nový dvoulitrový turbo motor s výkonem
+                            přes 400 koní</h3>
+                        <p class="news-card-text">Toyota potvrdila vývoj nového 2.0L přeplňovaného čtyřválce
+                            přezdívaného „Baby 2JZ". Motor v továrním nastavení dosahuje 400–450 k, závodní verze pak až
+                            600 k.</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-calendar-alt"></i> Květen 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card reveal" style="--delay: 0.2s">
+                    <div class="news-card-img-wrap">
+                        <img src="images/webp/miraiiiii.webp" alt="Toyota Mirai" class="news-card-img" loading="lazy">
+                    </div>
+                    <div class="news-card-body">
+                        <span class="news-tag">Vodík</span>
+                        <h3 class="news-card-title">Toyota Mirai třetí generace: vodíkový sedan pro nové desetiletí</h3>
+                        <p class="news-card-text">Toyota pracuje na třetí generaci Mirai s dojezdem přes 700 km.
+                            Platformu sdílí s Lexus LS a přináší sportovnější design inspirovaný japonskou čistotou
+                            linií.</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-calendar-alt"></i> Duben 2026</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section-faq">
+        <div class="faq-inner">
+            <div class="faq-left reveal">
+                <span class="section-tag">/ 03 FAQ</span>
+                <h2 class="section-title">Máte otázky?</h2>
+                <p class="faq-intro">Nejčastější dotazy návštěvníků na jednom místě. Nenašli jste odpověď? Napište nám.
+                </p>
+                <a href="mailto:info@muzeum.cz" class="btn-outline">Napsat email <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="faq-right">
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Jaká jsou otevírací doba muzea?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>Muzeum je otevřeno denně od <strong>9:00 do 18:00</strong>. V pondělí je zavřeno. Poslední
+                            vstup je v 17:15.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="--delay: 0.1s">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Jaké je vstupné?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>Základní vstupné je <strong>250 Kč</strong> pro dospělé, <strong>150 Kč</strong> pro děti a
+                            studenty. Rodinné vstupné (2 dospělí + 2 děti) je 650 Kč.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="--delay: 0.15s">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Je muzeum bezbariérové?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>Ano, muzeum je plně přizpůsobeno osobám s omezenou pohyblivostí. K dispozici jsou výtahy,
+                            bezbariérové toalety a speciální průvodce.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="--delay: 0.2s">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Lze v muzeu fotografovat?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>Fotografování pro osobní účely je povoleno a zdarma. Komerční focení vyžaduje předchozí
+                            souhlas vedení muzea.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== REZERVACE + MAPA ===================== -->
+    <section class="section-contact" id="rezervace">
+        <div class="contact-wrap">
+            <!-- FORM -->
+            <div class="contact-form-col reveal">
+                <span class="section-tag">/ 04 Vstupenky</span>
+                <h2 class="section-title">Rezervace</h2>
+                <form class="res-form" id="reservation-form" novalidate>
+                    <div class="form-row-2">
+                        <div class="field">
+                            <label for="visit-date">Datum návštěvy</label>
+                            <input type="date" id="visit-date" name="visit-date" required>
+                        </div>
+                        <div class="field">
+                            <label for="visit-time">Čas</label>
+                            <select id="visit-time" name="visit-time" required>
+                                <option value="">Vyberte čas</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:30">16:30</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- TICKET BUILDER -->
+                    <div class="ticket-builder">
+                        <div class="ticket-builder-header">
+                            <span class="ticket-builder-label">Vstupenky</span>
+                            <span class="ticket-builder-hint">Přidejte různé typy vstupenek</span>
+                        </div>
+
+                        <!-- Ticket rows are injected here by JS -->
+                        <div class="ticket-rows" id="ticket-rows"></div>
+
+                        <button type="button" class="ticket-add-btn" id="ticket-add-btn">
+                            <i class="fas fa-plus"></i>
+                            Přidat další vstupenku
+                        </button>
+
+                        <!-- Live price summary -->
+                        <div class="ticket-summary" id="ticket-summary">
+                            <div class="ticket-summary-rows" id="ticket-summary-rows"></div>
+                            <div class="ticket-total">
+                                <span>Celkem</span>
+                                <span id="ticket-total-price">0 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="field">
+                            <label for="name">Jméno a příjmení</label>
+                            <input type="text" id="name" name="name" autocomplete="name" placeholder="Jan Novák"
+                                required>
+                        </div>
+                        <div class="field">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" autocomplete="email" placeholder="jan@email.cz"
+                                required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+420 123 456 789"
+                            required>
+                    </div>
+                    <div class="field">
+                        <label for="message">Poznámka</label>
+                        <textarea id="message" name="message" rows="3"
+                            placeholder="Bezbariérový přístup, skupinová návštěva..."></textarea>
+                    </div>
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <span>Souhlasím se zpracováním osobních údajů pro účely rezervace.</span>
+                    </label>
+                    <p class="form-status" id="reservation-status" aria-live="polite"></p>
+                    <button type="submit" class="btn-submit">
+                        <span>Odeslat rezervaci</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- MAP + INFO -->
+            <div class="contact-map-col reveal" style="--delay: 0.15s" id="kontakt">
+                <span class="section-tag">/ 05 Kontakt</span>
+                <h2 class="section-title">Najděte nás</h2>
+
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Adresa</strong>
+                            <span>Václavské náměstí 1, 110 00 Praha 1</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Otevírací doba</strong>
+                            <span>Út–Ne 9:00–18:00 | Pondělí zavřeno</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Telefon</strong>
+                            <a href="tel:+420123456789">+420 123 456 789</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>E-mail</strong>
+                            <a href="mailto:info@muzeum.cz">info@muzeum.cz</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-box">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.097937855!2d14.4221567!3d50.0820074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94f7f20a90db%3A0x73b0a30c20b6e6e1!2sV%C3%A1clavsk%C3%A9+n%C3%A1m.+1%2C+110+00+Nov%C3%A9+M%C4%9Bsto!5e0!3m2!1scs!2scz!4v1699000000000!5m2!1scs!2scz"
+                        title="Mapa muzea" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== REVIEWS ===================== -->
+    <section class="section-reviews">
+        <div class="reviews-inner">
+            <div class="section-header reveal">
+                <span class="section-tag">/ 06 Recenze</span>
+                <h2 class="section-title">Co říkají návštěvníci</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card reveal" style="--delay: 0s">
+                    <div class="review-stars" aria-label="5 hvězd">★★★★★</div>
+                    <p class="review-text">„Úžasné muzeum s nádhernou kolekcí. Vynikající expozice a přátelský personál.
+                        Rozhodně se vrátím!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">JN</div>
+                        <div>
+                            <strong>Jan Novák</strong>
+                            <span>Praha</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal" style="--delay: 0.1s">
+                    <div class="review-stars" aria-label="5 hvězd">★★★★★</div>
+                    <p class="review-text">„Velmi zajímavé a poučné expozice. Skvělá atmosféra a dobře zpracovaný audio
+                        průvodce. Doporučuji."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">MS</div>
+                        <div>
+                            <strong>Marie Svobodová</strong>
+                            <span>Brno</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal" style="--delay: 0.2s">
+                    <div class="review-stars" aria-label="5 hvězd">★★★★★</div>
+                    <p class="review-text">„Doporučuji všem nadšencům! Muzeum nabízí jedinečné kusy a odborný výklad.
+                        Perfektní zážitek."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">PD</div>
+                        <div>
+                            <strong>Petr Dvořák</strong>
+                            <span>Ostrava</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Logo" class="footer-logo">
+                    <p class="footer-tagline">Uchovávání odkazu japonského automobilového inženýrství.</p>
+                </div>
+
+                <div class="footer-links-col">
+                    <strong>Navigace</strong>
+                    <ul>
+                        <li><a href="#expozice">Expozice</a></li>
+                        <li><a href="#novinky">Novinky</a></li>
+                        <li><a href="#rezervace">Vstupenky</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <strong>Informace</strong>
+                    <ul>
+                        <li><a href="#expozice">O muzeu</a></li>
+                        <li><a href="#rezervace">Skupinové návštěvy</a></li>
+                        <li><a href="#rezervace">Komentované prohlídky</a></li>
+                        <li><a href="#rezervace">Ochrana soukromí</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-col">
+                    <strong>Sledujte nás</strong>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram" class="social-btn">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook" class="social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="YouTube" class="social-btn">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="X (Twitter)" class="social-btn">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Muzeum Japonských Sedanů. Všechna práva vyhrazena.</p>
+                <p><a href="mailto:info@muzeum.cz" class="footer-link">info@muzeum.cz</a> &nbsp;|&nbsp; <a
+                        href="tel:+420123456789" class="footer-link">+420 123 456 789</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
