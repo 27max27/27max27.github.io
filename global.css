@@ -1705,7 +1705,7 @@ button { font-family: var(--font-main); cursor: pointer; }
         gap: 0.25rem;
     }
 
-    /* News */
+     /* News */
     .news-card {
         grid-template-columns: 130px 1fr;
     }
@@ -1723,6 +1723,14 @@ button { font-family: var(--font-main); cursor: pointer; }
         font-size: 0.8rem;
         line-height: 1.6;
         margin-top: 0.35rem;
+    }
+
+    /* Darker overlay on featured news card for mobile readability */
+    .news-feat-overlay {
+        background: linear-gradient(to top,
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0.82) 45%,
+            rgba(0,0,0,0.45) 100%);
     }
 
     /* FAQ */
