@@ -1102,6 +1102,10 @@ button {
     transition: transform 0.6s ease;
 }
 
+.mirai-img {
+    object-position: 45% center;
+}
+
 .news-card:hover .news-card-img {
     transform: scale(1.06);
 }
@@ -1948,6 +1952,10 @@ button {
         font-size: 0.8rem;
         line-height: 1.6;
         margin-top: 0.35rem;
+    }
+
+    .mirai-img {
+        object-position: 45% 55%;
     }
 
     /* Darker overlay on featured news card for mobile readability */
