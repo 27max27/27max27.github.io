@@ -677,6 +677,24 @@ button {
 /* Jedna karta — na desktopu jsou vidět přesně 2 vedle sebe.
    flex-basis je pevně daný výpočtem (ne auto), jinak by si flexbox vzal
    obří přirozenou šířku obrázku a karty by byly špatně široké. */
+/* Wrapper drží proporce — auto nikdy nepřepadne */
+.expo-carousel-img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--clr-bg-2);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expo-carousel-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 .expo-carousel-slide {
     flex: 0 0 calc((100% - 1.25rem) / 2);
     position: relative;
@@ -730,6 +748,8 @@ button {
     font-weight: 700;
     color: #fff;
     line-height: 1.3;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .expo-carousel-desc {
@@ -896,8 +916,15 @@ button {
 }
 
 @keyframes countdownFadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .countdown-opened-icon {
@@ -908,8 +935,15 @@ button {
 }
 
 @keyframes countdownPulse {
-    0%, 100% { transform: scale(1); }
-    50%      { transform: scale(1.12); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
 }
 
 .countdown-opened-title {
@@ -1746,10 +1780,62 @@ button {
         display: block;
     }
 
-    /* Hero */
+    /* Hero — mobilní vertikální stack:
+       1) text nahoře na tmavém pozadí (čitelný bez overlay)
+       2) obrázek auta pod textem (contain — celé viditelné)
+       3) CTA tlačítka na šířku pro snadné klepnutí
+       4) tečky navigace dole */
+    .hero {
+        height: auto;
+        min-height: auto;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
     .hero-content {
-        padding: 0 5%;
-        padding-top: var(--nav-h);
+        position: relative;
+        z-index: 2;
+        padding: calc(var(--nav-h) + 1.5rem) 5% 2rem;
+        background: var(--clr-bg);
+        max-width: none;
+        order: 1;
+        text-align: center;
+    }
+
+    .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-bg {
+        position: relative;
+        order: 2;
+        height: 56vw;
+        min-height: 220px;
+        max-height: 380px;
+        background: var(--clr-bg);
+    }
+
+    /* Auto celé viditelné, žádné oříznutí */
+    .hero-slide {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* Overlay není potřeba — text leží na tmavém pozadí */
+    .hero-overlay {
+        display: none;
+    }
+
+    .hero-dots {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        order: 3;
+        justify-content: center;
+        padding: 1rem 0 2rem;
+        background: var(--clr-bg);
     }
 
     .hero-scroll-hint {
@@ -1760,8 +1846,10 @@ button {
         flex-direction: column;
     }
 
-    .btn-primary,
-    .btn-ghost {
+    /* Plná šířka tlačítek pro snadné thumb-tapping */
+    .hero-actions .btn-primary,
+    .hero-actions .btn-ghost {
+        width: 100%;
         text-align: center;
         justify-content: center;
     }
@@ -1796,8 +1884,9 @@ button {
         flex: 0 0 100%;
     }
 
-    .expo-carousel-slide img {
-        height: 200px;
+    /* Obrázek auta – wrapper drží 16:9 na všech šířkách */
+    .expo-carousel-img-wrap {
+        aspect-ratio: 16 / 9;
     }
 
     .expo-carousel-btn {
@@ -1808,6 +1897,11 @@ button {
 
     .expo-countdown-wrap {
         margin-bottom: 2.5rem;
+    }
+
+    /* Menší titulek karty na mobilu — zabrání přetékání dlouhých názvů */
+    .expo-carousel-title {
+        font-size: 0.95rem;
     }
 
     .cd-num {
@@ -1869,7 +1963,30 @@ button {
         gap: 2rem;
     }
 
-    /* Form */
+    .faq-left {
+        text-align: center;
+    }
+
+    /* Form & Rezervace */
+    .contact-form-col {
+        text-align: center;
+    }
+
+    .contact-form-col .res-form {
+        text-align: left;
+    }
+
+    /* Kontakt (mapa a info) */
+    .contact-map-col {
+        text-align: center;
+    }
+
+    .contact-info-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     .form-row-2 {
         grid-template-columns: 1fr;
     }
@@ -1892,12 +2009,22 @@ button {
     .footer-top {
         grid-template-columns: 1fr;
         gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-brand {
+        align-items: center;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 
     .footer-bottom {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
+        align-items: center;
+        text-align: center;
+        gap: 0.8rem;
     }
 }
 

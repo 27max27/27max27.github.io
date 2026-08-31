@@ -206,7 +206,12 @@ function createExpoCarouselSlide(exhibition) {
         body.appendChild(desc);
     }
 
-    slide.append(img, body);
+    // Obal obrázku – řídí aspect-ratio, object-fit: contain (celé auto viditelné)
+    const imgWrap = document.createElement('div');
+    imgWrap.className = 'expo-carousel-img-wrap';
+    imgWrap.appendChild(img);
+
+    slide.append(imgWrap, body);
     return slide;
 }
 
