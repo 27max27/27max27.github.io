@@ -75,7 +75,7 @@ function initHeroSlider() {
    COUNTDOWN TIMER
    ============================================================ */
 function initCountdown() {
-    const endDate = new Date('2026-09-01T09:00:00').getTime();
+    const endDate = new Date('2026-09-01T12:40:00+02:00').getTime();
 
     const els = {
         days:    document.getElementById('days'),
@@ -88,11 +88,28 @@ function initCountdown() {
 
     function pad(n) { return String(n).padStart(2, '0'); }
 
+    function showOpened() {
+        const card = document.querySelector('.countdown-inner');
+        if (card) {
+            card.innerHTML = `
+                <div class="countdown-opened">
+                    <span class="countdown-opened-icon"><i class="fas fa-door-open"></i></span>
+                    <h3 class="countdown-opened-title">Nová expozice otevřena!</h3>
+                    <p class="countdown-opened-text">Speciální výstava věnovaná vývoji japonských sedanů je právě otevřena. Přijďte se podívat!</p>
+                    <a href="#rezervace" class="btn-primary countdown-opened-btn">Rezervovat vstupenku →</a>
+                </div>
+            `;
+        }
+    }
+
+    let intervalId = null;
+
     function tick() {
         const diff = endDate - Date.now();
 
         if (diff <= 0) {
-            Object.values(els).forEach(el => { el.textContent = '00'; });
+            if (intervalId) clearInterval(intervalId);
+            showOpened();
             return;
         }
 
@@ -108,7 +125,7 @@ function initCountdown() {
     }
 
     tick();
-    setInterval(tick, 1000);
+    intervalId = setInterval(tick, 1000);
 }
 
 /* ============================================================
@@ -422,8 +439,6 @@ function initReveal() {
 
     elements.forEach(el => observer.observe(el));
 }
-
-
 
 /* ============================================================
    FAQ ACCORDION
